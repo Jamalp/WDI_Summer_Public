@@ -4,8 +4,8 @@ function Train(name, stations) {
 }
 
 Train.prototype.distance = function(board, exit) {
-  board = this.stations.indexOf[board];
-  exit = this.stations.indexOf[exit];
+  board = this.stations.indexOf(board);
+  exit = this.stations.indexOf(exit);
   return Math.abs(board - exit);
 };
 
@@ -18,3 +18,32 @@ var lTrain = new Train('The L Train', lStations);
 var nTrain = new Train('The N Train', nStations);
 var sixTrain = new Train('The Six Train', sixStations);
 var gTrain = new Train('The G Train', gStations);
+
+
+var trains = [lTrain, nTrain, sixTrain, gTrain];
+var msg = "Which train would you like to get on? \n The L, N, 6 & G are available" + displayLines();
+var startStation = prompt(msg);
+
+for (var i = 0; i < trains.length; i ++) {
+  if (train[i].name === startStation)
+    train = trains[i]
+};
+
+function displayLines() {
+  var trainNames = "";
+  for (var i = 0; i < trains.length; i++) {
+    trainNames += trains[i].name + '\n';
+  }
+  return trainNames.trim();
+}
+
+
+function displayStops() {
+  var stopNames = "";
+  for (var i = 0; i < startStation.length; i++) {
+    stopNames += startStation[i].name + '\n';
+  }
+  return startStation.trim();
+}
+
+var endStation = prompt("Which station would you like to get off");
