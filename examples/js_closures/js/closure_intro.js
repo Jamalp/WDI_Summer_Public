@@ -34,12 +34,4 @@ window.onload = function(){
   document.getElementById("resetClosure").onclick = function(){
     nextStudent = handleStudents();
   };
-
-  function displayLines() {
-    var trainNames = "";
-    for (var = i; i < trains.length; i++) {
-      trainNames += trains[i].name + '\n';
-    }
-    retirm trainNames.trim();
-  }
 };

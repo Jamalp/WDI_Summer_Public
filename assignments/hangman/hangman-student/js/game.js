@@ -1,5 +1,7 @@
 var word = {
   alphabet = [];
+  matchedLetters = [];
+  mismatchedLetters = [];
   secretWord: "",
   wordList: ['ruby', 'rails', 'javascript', 'array', 'hash', 'underscore', 'sinatra', 'model', 'controller', 'view', 'devise', 'authentication', 'capybara', 'jasmine', 'cache', 'sublime', 'terminal', 'system', 'twitter', 'facebook', 'function', 'google', 'amazon', 'development', 'data', 'design', 'inheritance', 'prototype', 'gist', 'github', 'agile', 'fizzbuzz', 'route', 'gem', 'deployment', 'database'],
   // Selects a random word from the word list sets the secret word
@@ -11,7 +13,13 @@ var word = {
   // 1) A string with the parts of the secret word that have been guessed correctly and underscore for the parts that haven't
   // 2) An array of all the guessed letters that were not in the secret word
   checkLetters: function(guessedLetters){
-    if (_.contains(alphabet, guessedLetters)
+    if (_.contains(this.secretWord, guessedLetters)) {
+      this.matchedLetters.push(guessedLetters);
+    } else {
+      this.mismatchedLetters.push(guessedLetters);
+    }
+      this.alphabet.push(guessedLetters);
+    }
 };
 
 var player = {

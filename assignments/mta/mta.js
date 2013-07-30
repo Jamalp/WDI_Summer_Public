@@ -1,3 +1,4 @@
+ 'use strict';
 // Refactor your code with underscore
 // Prompt the user
 // Please choose a startLine
